@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:see="http://thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<head>
+		<meta charset="UTF-8">
+		<title>ホーム</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<!-- sec:authentication属性を追加することで、ログインユーザーの情報を取得することができる
+			ユーザーIDならname、ロールならprincipal.authoritiesで取得できる
+			これは、ユーザー情報を持っているクラスのgetterを呼び出している -->
+		<p>ユーザーID:<span sec:authentication="name"></span></p>
+		<p>ロール:<span sec:authentication="principal.authorities"></span></p>
+		<form method="post" th:action="@{/logout}">
+			<button type="submit">ログアウト</button>
+		</form>
+	</body>
+</html>
