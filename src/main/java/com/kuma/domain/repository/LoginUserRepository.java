@@ -69,7 +69,8 @@ public class LoginUserRepository {
 		String mailAddress = (String) userMap.get("mail_address");
 		// 結果返却用のUserDetailsを生成
 		AppUserDetails user = new AppUserDetails()
-				.builder().userId(userId).password(password)
+				.builder()
+				.userId(userId).password(password)
 				.passUpdateDate(passUpdateDate).loginMissTimes(loginMissTimes)
 				.unlock(unlock).enabled(enabled)
 				.userDueDate(userDueDate).tenantId(tenantId)
