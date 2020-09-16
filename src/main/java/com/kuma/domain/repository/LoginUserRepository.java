@@ -23,7 +23,7 @@ public class LoginUserRepository {
 	// 権限リストを取得するSQL
 	private static final String SELECT_USER_ROLE_SQL = "SELECT "+"role.role_name "+"FROM "+"m_user "
 						+"INNER JOIN "+"t_user_role user_role "+"ON "+"m_user.user_id = user_role.user_id "
-						+"INNER JOIN "+"m_role role "+"OK "+"user_role.role_id = role.role_id"
+						+"INNER JOIN "+"m_role role "+"ON "+"user_role.role_id = role.role_id "
 						+"WHERE m_user.user_id=?";
 	// ユーザー情報を取得してUserDetailsを生成するメソッド
 	public UserDetails selectOne(String userId) {
